@@ -13,13 +13,13 @@ namespace Signature_Assessment_Repository.DAL.Initializer
         {
             new List<Person>
         {
-            new Person {Name ="Siyamcela", Password="Siya",Surname="Madokwe"},
+            new Person {Name ="Siyamcela", Password="Siya",Surname="Madokwe",},
         
         }.ForEach(b => context.Person.Add(b));
 
             new List<Info>
         {
-            new Info { },
+            new Info { AddressCode= "7100", AddressLine1 = "21 siya street", AddressLine2 = "siya town", AddressLine3 = "Siyas province", PostalAddress1 = "Siya Street", PostalAddress2 ="Siya Town", PostalCode="7140", CelNo = "0781234568", TelNo="01786556665" },
         }.ForEach(b => context.Info.Add(b));
 
             base.Seed(context);

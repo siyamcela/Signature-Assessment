@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Question 1", "Question 1", "{1ABBDCBE-77C7-4EC3-810F-10F861A16073}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Question 2", "Question 2", "{42DC3C9B-63E5-44C3-A6F3-469FE44A6F1E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signature Assessment Repository", "Signature Assessment Repository\Signature Assessment Repository.csproj", "{95E16AA8-1B03-4989-AE32-DB7383F3F71F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signature Assessment Web", "Signature Assessment Web\Signature Assessment Web.csproj", "{BC968229-666E-4DE8-8E18-497529D7547B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signature Assessment Models", "Signature Assessment Models\Signature Assessment Models.csproj", "{28FC50DF-490C-47EF-AA8C-034B1D3EC209}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signature Assessment API", "Signature Assessment API\Signature Assessment API.csproj", "{54DA3621-6E06-4209-8CAD-0B4EAC005CF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95E16AA8-1B03-4989-AE32-DB7383F3F71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E16AA8-1B03-4989-AE32-DB7383F3F71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E16AA8-1B03-4989-AE32-DB7383F3F71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E16AA8-1B03-4989-AE32-DB7383F3F71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC968229-666E-4DE8-8E18-497529D7547B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC968229-666E-4DE8-8E18-497529D7547B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC968229-666E-4DE8-8E18-497529D7547B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC968229-666E-4DE8-8E18-497529D7547B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FC50DF-490C-47EF-AA8C-034B1D3EC209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FC50DF-490C-47EF-AA8C-034B1D3EC209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FC50DF-490C-47EF-AA8C-034B1D3EC209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FC50DF-490C-47EF-AA8C-034B1D3EC209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DA3621-6E06-4209-8CAD-0B4EAC005CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DA3621-6E06-4209-8CAD-0B4EAC005CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DA3621-6E06-4209-8CAD-0B4EAC005CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DA3621-6E06-4209-8CAD-0B4EAC005CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95E16AA8-1B03-4989-AE32-DB7383F3F71F} = {1ABBDCBE-77C7-4EC3-810F-10F861A16073}
+		{BC968229-666E-4DE8-8E18-497529D7547B} = {1ABBDCBE-77C7-4EC3-810F-10F861A16073}
+		{28FC50DF-490C-47EF-AA8C-034B1D3EC209} = {1ABBDCBE-77C7-4EC3-810F-10F861A16073}
+		{54DA3621-6E06-4209-8CAD-0B4EAC005CF0} = {1ABBDCBE-77C7-4EC3-810F-10F861A16073}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FF7220A-88DE-403D-91D7-9387044EF997}
+	EndGlobalSection
+EndGlobal

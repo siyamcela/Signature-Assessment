@@ -1,0 +1,220 @@
+﻿@model Signature_Assessment_Models.Person
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="~/Scripts/knockout-3.5.1.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<table style="width:100%;">
+    <tbody>
+
+        <tr>
+            <td>First Name :</td>
+            <td>
+                <input data-bind="value: Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Surname :</td>
+            <td>
+                <input data-bind="value: Surname" />
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Person ID :</td>
+            <td>
+                <input data-bind="value: Id" />
+            </td>
+
+        </tr>
+        <tr>
+            <td>Tel No :</td>
+            <td>
+                <input data-bind="value: PostalAddress1" />
+            </td>
+        </tr>
+        <tr>
+            <td>Cel No :</td>
+            <td>
+                <input data-bind="value: CelNo" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Address Line 1 :</td>
+            <td>
+                <input data-bind="value: AddressLine1" />
+            </td>
+        </tr>
+        <tr>
+            <td>Address Address Line 2 :</td>
+            <td>
+                <input data-bind="value: AddressLine2" />
+            </td>
+        </tr>
+        <tr>
+            <td>Address Address Line 3 :</td>
+            <td>
+                <input data-bind="value: AddressLine3" />
+            </td>
+        </tr>
+        <tr>
+            <td>Address Code :</td>
+            <td>
+                <input data-bind="value: AddressCode" />
+            </td>
+        </tr>
+        <tr>
+            <td>Postal Address 1 :</td>
+            <td>
+                <input data-bind="value: PostalAddress1" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Postal Address 2 :</td>
+            <td>
+                <input data-bind="value: PostalAddress2" />
+            </td>
+        </tr>
+        <tr>
+            <td>Postal Code :</td>
+            <td>
+                <input data-bind="value: PostalCode" />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <button type="button" data-bind="click:
+                    Update">
+                    update
+                </button>
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<script>
+
+
+    $.ajax({
+        type: "POST",
+        traditional: true,
+        async: true,
+        cache: false,
+        url: '/Home/GetDetails',
+        context: document.body,
+        success: function (data) {
+            self.Init(data.responseData);
+            //  Init(data);
+
+        },
+        error: function (xhr) {
+            // Debugger;
+            console.log(xhr.responseText);
+            alert("Error has occurred...");
+        }
+    });
+
+    self.Response = ko.observable(null);
+    self.UserInfo = ko.observable('');
+    function PersonInfoViewModel() {
+
+        self.Id = ko.observable();
+        self.Name = ko.observable();
+        self.Surname = ko.observable();
+        self.Password = ko.observable();
+        self.LastLogin = ko.observable();
+        self.PersonInfo = ko.observable();
+
+
+
+        self.PostalAddress1 = ko.observable();
+        self.PostalAddress2 = ko.observable();
+        self.PostalCode = ko.observable();
+        self.TelNo = ko.observable();
+        self.AddressCode = ko.observable();
+        self.AddressLine1 = ko.observable();
+        self.AddressLine2 = ko.observable();
+        self.AddressLine3 = ko.observable();
+        self.CelNo = ko.observable();
+
+
+
+
+    }
+
+    self.moreInfo = function PersonInfo() {
+
+        PostalAddress1 = self.PostalAddress1,
+            PostalAddress2 = self.PostalAddress2,
+            PostalCode = self.PostalCode,
+            TelNo = self.TelNo,
+            AddressCode = self.AddressCode,
+            AddressLine1 = self.AddressLine1,
+            AddressLine2 = self.AddressLine2,
+            AddressLine3 = self.AddressLine3,
+            CelNo = self.CelNo
+
+    }
+
+    self.Init = function (model) {
+
+        var PersonInfo = JSON.parse(model);
+
+        self.Id(PersonInfo.id);
+        self.Name(PersonInfo.name);
+        self.Surname(PersonInfo.surname);
+        self.Password(PersonInfo.password);
+
+        self.LastLogin(PersonInfo.lastLogin);
+
+        self.PostalAddress1(PersonInfo.personInfo.postalAddress1);
+        self.PostalAddress2(PersonInfo.personInfo.postalAddress2);
+        self.PostalCode(PersonInfo.personInfo.postalCode);
+        self.TelNo(PersonInfo.personInfo.telNo);
+        self.AddressCode(PersonInfo.personInfo.addressCode);
+        self.AddressLine1(PersonInfo.personInfo.addressLine1);
+        self.AddressLine2(PersonInfo.personInfo.addressLine2);
+        self.AddressLine3(PersonInfo.personInfo.addressLine3);
+        self.CelNo(PersonInfo.personInfo.celNo);
+    }
+
+    self.Update = function () {
+
+        var Person = self.UserInfo;
+
+
+        $.ajax({
+            type: "POST",
+            traditional: true,
+            async: true,
+            cache: false,
+            data: { Person },
+            url: '/Home/Update',
+            context: document.body,
+            success: function (data) {
+                Init(data.responseData);
+                //  Init(data);
+
+            },
+            error: function (xhr) {
+                // Debugger;
+                console.log(xhr.responseText);
+                alert("Error has occurred...");
+            }
+        });
+    }
+
+    self.viewModel = new PersonInfoViewModel();
+    self.UserInfo(ko.toJSON(self.viewModel));
+    ko.applyBindings(self.viewModel);
+</script>
